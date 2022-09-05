@@ -32,34 +32,55 @@ public class TollFeeCalculator {
             if(diffInMinutes > 60) {
                 totalFee += getTollFeePerPassing(date);
                 intervalStart = date;
-            } else {
-                totalFee += Math.max(getTollFeePerPassing(date), getTollFeePerPassing(intervalStart));
+            }
+            else {
+                //totalFee += Math.max(getTollFeePerPassing(date), getTollFeePerPassing(intervalStart));
+                if(getTollFeePerPassing(date) > getTollFeePerPassing(intervalStart))
+                {
+                    totalFee += getTollFeePerPassing(date);
+                    totalFee -= getTollFeePerPassing(intervalStart);
+                    intervalStart = date;
+                }
             }
         }
-        return Math.max(totalFee, 60);
+        return Math.min(totalFee, 60); //ändrad till math.min ist, annars returnerar bara 60 hela tiden (som är det större talet)
     }
 
     public static int getTollFeePerPassing(LocalDateTime date) {
         if (isTollFreeDate(date)) return 0;
         int hour = date.getHour();
         int minute = date.getMinute();
-        if (hour == 6 && minute >= 0 && minute <= 29) return 8;
-        else if (hour == 6 && minute >= 30 && minute <= 59) return 13;
-        else if (hour == 7 && minute >= 0 && minute <= 59) return 18;
-        else if (hour == 8 && minute >= 0 && minute <= 29) return 13;
-        else if (hour >= 8 && hour <= 14 && minute >= 30 && minute <= 59) return 8;
-        else if (hour == 15 && minute >= 0 && minute <= 29) return 13;
-        else if (hour == 15 && minute >= 0 || hour == 16 && minute <= 59) return 18;
-        else if (hour == 17 && minute >= 0 && minute <= 59) return 13;
-        else if (hour == 18 && minute >= 0 && minute <= 29) return 8;
+
+        if (hour == 6 && minute <= 29) return 8;
+        else if (hour == 6) return 13;
+        else if (hour == 7) return 18;
+        else if (hour == 8 && minute <= 29) return 13;
+        else if ((hour >= 8 && hour <= 14)) return 8;
+        else if (hour == 15 && minute <= 29) return 13;
+        else if (hour == 15 || hour == 16) return 18;
+        else if (hour == 17) return 13;
+        else if (hour == 18 && minute <= 29) return 8;
         else return 0;
     }
 
     public static boolean isTollFreeDate(LocalDateTime date) {
+       /* System.out.println("this date" + (date.getDayOfWeek().getValue() == 6));*/
         return date.getDayOfWeek().getValue() == 6 || date.getDayOfWeek().getValue() == 7 || date.getMonth().getValue() == 7;
     }
 
     public static void main(String[] args) {
         new TollFeeCalculator("src/test/resources/Lab4.txt");
+
     }
 }
+
+//test för
+//* rätt deb/ klockslag/ fm
+//rätt deb/klockslag em/kväll
+//rätt avgiftsfri deb natt
+//* rätt deb avgiftsfri dag (även helgdagar)
+//* rätt deb om flrea tider passerats inom 1 h och då bed dyraste zonpriset
+//* deb stannar vid 60kr maxtak
+//*rätt deb i juli
+//test att resultat blir mindre än 60 och returnerar rätt tal
+//test att resultat blir över 60 och returnerar 60.
