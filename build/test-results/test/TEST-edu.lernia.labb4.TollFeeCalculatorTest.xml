@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.lernia.labb4.TollFeeCalculatorTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2022-09-08T07:36:09" hostname="LAPTOP-H4N03RG5" time="0.118">
+  <properties/>
+  <testcase name="getTollFeePerPassingForPassingAfterEight()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.035"/>
+  <testcase name="getTotalFeeCostOfSaturday()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.006"/>
+  <testcase name="getTotalFeeCostOfSunday()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingForPassingBetweenSevenAndEight()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.005"/>
+  <testcase name="getTotalFeeCostOfaDayThatsAleapYearAndASaturday()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingForPassingDuringNightAndEarlyMorning()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.021"/>
+  <testcase name="getTollFeeOnlyDebOnceIfMultiplePassagesInAnHour()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.003"/>
+  <testcase name="getTotalFeeCostOfaDayThatsAleapYearAndAMonday()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingAfterSixInTheMorning()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingAfterSixInTheAfterNoon()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.001"/>
+  <testcase name="getTollFeePerPassingMaximumFee()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingAfterThree()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.001"/>
+  <testcase name="getTotalFeeCostOfaDayThatsNotAHolidayButSameDayOnlyAYearLater()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.001"/>
+  <testcase name="getTotalFeeCostOfDayInJuly()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingForPassingBetweenNineAnBeforeThree()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.007"/>
+  <testcase name="getTollFeeGetsRightAmountOfFeePerPassage()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.001"/>
+  <testcase name="getTotalFeeCostOfHoliday()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingForPassingBeforeSeven()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingAfterFive()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <testcase name="getTollFeePerPassingHalfPastFour()" classname="edu.lernia.labb4.TollFeeCalculatorTest" time="0.002"/>
+  <system-out><![CDATA[The total fee for the inputfile is 0
+they are the same
+The total fee for the inputfile is 0
+they are the same
+The total fee for the inputfile is 0
+they are the same
+The total fee for the inputfile is 21
+they are the same
+The total fee for the inputfile is 55
+they are the same
+The total fee for the inputfile is 60
+they are the same
+The total fee for the inputfile is 55
+they are the same
+The total fee for the inputfile is 0
+they are the same
+The total fee for the inputfile is 0
+they are the same
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
